@@ -13,22 +13,22 @@ services:
       #- postgres_data:/var/lib/postgresql/data
       - ./init:/docker-entrypoint-initdb.d
 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: assignment_app
-    depends_on:
-      - db
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/assignment
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: secret
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      SPRING_JPA_SHOW_SQL: "true"
-    ports:
-      - "8080:8080"
+  #app:
+  #  build:
+  #    context: .
+  #    dockerfile: Dockerfile
+  #  container_name: assignment_app
+  #  depends_on:
+  #    - db
+  #  environment:
+  #    SPRING_PROFILES_ACTIVE: docker
+  #    SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/assignment
+  #    SPRING_DATASOURCE_USERNAME: postgres
+  #    SPRING_DATASOURCE_PASSWORD: secret
+  #    SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  #    SPRING_JPA_SHOW_SQL: "true"
+  #  ports:
+  #    - "8080:8080"
 
 #volumes:
 #  postgres_data:
