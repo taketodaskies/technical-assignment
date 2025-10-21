@@ -18,7 +18,7 @@ import static com.example.assignment.util.AppConstants.*;
 public class Pet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = NOT_BLANK_CONSTRAINT_MESSAGE)
